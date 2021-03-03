@@ -1,2 +1,13 @@
-<h1>Pokemons#show</h1>
-<p>Find me in app/views/pokemons/show.html.erb</p>
+
+<% if @pokemon.enriched? %>
+    <%= image_tag @pokemon.image_url %>
+    <h3> <%= @pokemon.name %> </h3>
+    <p> <%= @pokemon.poke_type %> </p>
+    <ul>
+      <% @pokemon.moves.first(5).each do |move| %>
+        <li> <%= move %> </li>
+      <% end %>
+    </ul>
+<% else %>
+  <h4> We'll have <%= @pokemon.name %> ready in the next few seconds, please refresh the page </h4>
+<% end %>

@@ -2,13 +2,16 @@
 
 <div class="container mt-5">
   <div class="row">
-    <div class="col-sm-4 offset-sm-4">
-      <h3> Upload a new pokemon </h3>
-      <p> Our great service will enrich the pokemon for you, it just takes a bit</p>
-      <%= simple_form_for(@pokemon) do |f| %>
-       <%= f.input :name %>
-       <%= f.submit :enter_pokemon %>
-      <% end %>
+    <div class="col-sm-6">
+      <%= image_tag 'https://www.kindpng.com/picc/m/151-1510958_professor-oak-png-profesor-oak-pokemon-lets-go.png', size: "500x500" %>
+    </div>
+    <div class="col-sm-6">
+        <h2 class="display-4 mt-5"> The Pokedex </h2>
+        <p> Our great service will enrich the pokemon for you, it just takes a bit</p>
+        <%= simple_form_for(@pokemon) do |f| %>
+         <%= f.input :name %>
+         <%= f.submit 'enter pokemon', class: "btn btn-warning rounded-pill w-100" %>
+        <% end %>
     </div>
   </div>
 </div>
